@@ -1,18 +1,9 @@
-/* global RiTa:false, RiString:false */
-
-
+/* global RiTa:false */
 
 export function getSentence(limit = 5, sentence = []) {
   
-  // console.log('componentDidMount:', RiTa)
-  // var rs = RiString("The elephant took a bite!");
-  // console.log(rs.features());
-  
   const word = RiTa.randomWord()
   const syllCount = RiTa.getSyllables(word).split('/').length
-  // console.log('word:', word)
-  // console.log('syllCount', syllCount)
-  // console.log('limit:', limit)
 
   if (limit <= 0) return sentence
   if (limit === 1) {
@@ -28,6 +19,4 @@ export function getSentence(limit = 5, sentence = []) {
     sentence.push(word)
     return getSentence(limit - syllCount, sentence)
   }
-  
-
 }

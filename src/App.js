@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import './App.css'
 import { getSentence } from './assets/ritas'
-import Haiku from './components/Haiku.jsx'
-import Controls from './components/Controls.jsx'
+import Haiku from './components/Haiku'
+import Controls from './components/Controls'
 
 export default class App extends Component {
 
@@ -28,14 +28,10 @@ export default class App extends Component {
       <div className="App">
         <header className="header">
           <h3>Haiku'ing</h3>
-          <p>Random word Haiku generator/<br/>
-          build your own Haiku
-          </p>
+          <p>a Haiku playground</p>
         </header>
         <Haiku haiku={this.state.haiku} />
         <Controls generateNewHaiku={this.generateNewHaiku} />
-        
-
         <footer className="footer">Footer</footer>
       </div>
     )

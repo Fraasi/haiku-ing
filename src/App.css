@@ -21,12 +21,6 @@
   align-self: center;
 }
 
-.haiku {
-  grid-area: haiku;
-  justify-self: center;
-  align-self: center;
-}
-
 .controls {
   grid-area: controls;
   justify-self: center;

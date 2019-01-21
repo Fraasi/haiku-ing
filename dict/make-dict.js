@@ -6,10 +6,14 @@ const rita = require('rita')
 fs.readFile(path.join(__dirname, 'raw_text.txt'), {
   encoding: 'utf-8'
 }, (err, data) => {
+  // console.log('data:', data)
   // clean data, spaces
   const arr = data.split(' ')
+    .map( el => el.replace(/\r\n|\"/g, ' '))
+    .join(',').split(/[, ]/)
+  // let aarr = arr.join(' ').split(!/\b[A-Za-z]+\b/g)
+  // console.log('arr:', arr)
   // new lines and quotes
-    .map( el => el.replace(/\r\n|\"/g, ''))
   // empty strings & dashes
     .filter(el => {
       if (el === '')  return false

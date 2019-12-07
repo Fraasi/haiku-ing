@@ -8,7 +8,8 @@ import Controls from './components/Controls'
 export default class App extends Component {
 
   state = {
-    haiku: ''
+    dictHaiku: '',
+    ranHaiku: '',
   }
 
   componentDidMount() {
@@ -16,14 +17,17 @@ export default class App extends Component {
   }
 
   generateNewHaiku = () => {
-    // const first = getRanSentence().join(' ')
-    // const second = getRanSentence(7).join(' ')
-    // const third = getRanSentence().join(' ')
-    const first = getDictSentence().join(' ')
-    const second = getDictSentence(6).join(' ')
-    const third = getDictSentence().join(' ')
+    const firstRan = getRanSentence().join(' ')
+    const secondRan = getRanSentence(7).join(' ')
+    const thirdRan = getRanSentence().join(' ')
+    const firstDict = getDictSentence().join(' ')
+    const secondDict = getDictSentence(6).join(' ')
+    const thirdDict = getDictSentence().join(' ')
+    // const fourthDict = getDictSentence(6).join(' ')
+    // const fifthDict = getDictSentence(6).join(' ')
     this.setState({
-      haiku: `${first}<br/>${second}<br/>${third}`
+      dictHaiku: `${firstDict}<br/>${secondDict}<br/>${thirdDict}`,
+      ranHaiku: `${firstRan}<br/>${secondRan}<br/>${thirdRan}`
     })
   }
 
@@ -32,7 +36,7 @@ export default class App extends Component {
       <AppContext.Provider
         value={{
           theme: theme,
-          haiku: this.state.haiku,
+          haiku: this.state,
           generateNewHaiku: this.generateNewHaiku
         }}>
         <div className="App">

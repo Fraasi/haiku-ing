@@ -8,7 +8,11 @@ export default class Haiku extends Component {
       <AppContext.Consumer>
         {(context) => (
           <div className="haiku">
-            <p dangerouslySetInnerHTML={{ __html: context.haiku }} />
+            Random Haiku
+            <p dangerouslySetInnerHTML={{ __html: context.haiku.ranHaiku }} />
+            <hr />
+            Dictionary Haiku
+            <p dangerouslySetInnerHTML={{ __html: context.haiku.dictHaiku }} />
           </div>
         )
         }
